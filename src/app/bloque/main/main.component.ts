@@ -21,6 +21,7 @@ export class MainComponent {
   ) {
     this.noticiasService.getAll().subscribe((data: any) => {
       this.noticias = data.posts.map((noticia: any) =>{
+        console.log("Noticia:", noticia);
         this.usuarioService.getId(noticia.userId).subscribe((data: any) => {
           console.log("Usuario:", data);
         });

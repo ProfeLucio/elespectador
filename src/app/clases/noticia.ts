@@ -4,6 +4,7 @@ export class Noticia {
     views: number = 0;
     userId: number = 0;
     title: string = '';
+    tags: string[]  = [];
 
     titulo: string = '';
     descripcion: string = '';
@@ -17,6 +18,15 @@ export class Noticia {
         this.views = data.views;
         this.userId = data.userId;
         this.title = data.title;
+        this.tags = data.tags;
+        console.log("Tag: ", this.tags);
+    }
+
+    generateImage() {
+        let rand = Math.random()*this.tags.length;
+        rand = Math.round(rand);
+        return 'https://picsum.photos/300/150/';
+       // return 'https://picsum.photos/300/150/'+this.tags[rand];
     }
 
 }
